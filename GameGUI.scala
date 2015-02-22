@@ -12,6 +12,17 @@ object GameGUI extends App {
   val p2 = new Human(YELLOW);
   //Solver p1 = new Human(Player.RED);
   //Solver p2 = new Dummy(Player.YELLOW);
+  
+  val b = new Board()
+  b.makeMove(new Move(RED, 3))
+  b.makeMove(new Move(YELLOW, 3))
+  b.makeMove(new Move(RED, 3))
+  b.makeMove(new Move(YELLOW, 2))
+  
+  val state = new State(RED, b, new Move(YELLOW, 2))
+  println(state.toString())
+  println(state.initializeChildren())
+  
 
   /* --------------------------------- Do not change below here. --------------------------------- */
 

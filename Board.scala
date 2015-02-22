@@ -46,20 +46,20 @@ class Board {
       r = r - 1
 
     }
-    println(getPossibleMoves(move.player))
+    //println(getPossibleMoves(move.player))
     board(r)(c) = move.player
   }
 
   def getPossibleMoves(p: Player): Array[Move] = {
     var j = 0
     var t = 0
-    val possMoves = Array[Move]()
+    var possMoves = Array[Move]()
     
     for(i <- 0 to Board.NUM_COLS - 1) {
       if(getTile(0, i) == null) {
         val x = new Move(p, i)
         println(t)
-        possMoves :+ x
+        possMoves :+= x
         t = t + 1
         println(x)
       }
