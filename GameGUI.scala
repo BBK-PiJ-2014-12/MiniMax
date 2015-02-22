@@ -17,12 +17,15 @@ object GameGUI extends App {
   b.makeMove(new Move(RED, 3))
   b.makeMove(new Move(YELLOW, 3))
   b.makeMove(new Move(RED, 3))
+  b.makeMove(new Move(RED, 3))
+  b.makeMove(new Move(RED, 3))
+  b.makeMove(new Move(RED, 3))
   b.makeMove(new Move(YELLOW, 2))
   
   val state = new State(RED, b, new Move(YELLOW, 2))
-  println(state.toString())
-  println(state.initializeChildren())
-  
+  //println(state.toString())
+  //println(state.initializeChildren())
+  AI.createGameTree(state, 2)
 
   /* --------------------------------- Do not change below here. --------------------------------- */
 
