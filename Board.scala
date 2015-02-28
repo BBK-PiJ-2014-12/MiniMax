@@ -2,7 +2,7 @@ import scala.collection.mutable.ListBuffer
 
 object Board {
   val NUM_ROWS = 6
-  val NUM_COLS = 7
+  val NUM_COLS = 4
 
   def apply(b: Board) =
     new Board(b)
@@ -58,10 +58,10 @@ class Board {
     for(i <- 0 to Board.NUM_COLS - 1) {
       if(getTile(0, i) == null) {
         val x = new Move(p, i)
-        println(t)
+        //println(t)
         possMoves :+= x
         t = t + 1
-        println(x)
+        //println(x)
       }
     }  
     return possMoves

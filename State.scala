@@ -18,20 +18,17 @@ class State(@BeanProperty var player: Player, @BeanProperty var board: Board, @B
   @BeanProperty
   var value: Int = 0
 
-  def initializeChildren() {
-    
-    var moves = board.getPossibleMoves(player)
-    
-    for(i <- 0 to moves.length - 1) {
-      var b1 = Board(board)
+  def initializeChildren(): Unit = {
+    val moves = board.getPossibleMoves(player)
+    for (i<- 0 to moves.length-1) {
+      var b1 = new Board(board)
       b1.makeMove(moves(i))
-      val state: State = new State (player, b1 , moves(i))
+      val state: State = new State(player.opponent, b1, moves(i))
       children :+= state
     }
-    
-    for(i <- children)
-      println(i.toString())
-    
+    for (i<- children) {
+      //println(i.toString())
+    }
   }
 
   def writeToFile() {

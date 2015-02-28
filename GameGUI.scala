@@ -8,24 +8,27 @@ object GameGUI extends App {
          * game space. */
   //Solver p1= new AI(Player.RED, 6);
   //Solver p2= new Human(Player.YELLOW);
-  val p1 = new Human(RED);
-  val p2 = new Human(YELLOW);
+  val p1 = new AI(RED, 2);
+  val p2 = new AI(YELLOW,2);
   //Solver p1 = new Human(Player.RED);
   //Solver p2 = new Dummy(Player.YELLOW);
   
-  val b = new Board()
-  b.makeMove(new Move(RED, 3))
-  b.makeMove(new Move(YELLOW, 3))
-  b.makeMove(new Move(RED, 3))
-  b.makeMove(new Move(RED, 3))
-  b.makeMove(new Move(RED, 3))
-  b.makeMove(new Move(RED, 3))
-  b.makeMove(new Move(YELLOW, 2))
-  
-  val state = new State(RED, b, new Move(YELLOW, 2))
+//  val b = new Board()
+//  b.makeMove(new Move(RED, 3))
+//  b.makeMove(new Move(YELLOW, 3))
+//  b.makeMove(new Move(RED, 3))
+//  b.makeMove(new Move(RED, 3))
+//  b.makeMove(new Move(YELLOW, 3))
+//  //b.makeMove(new Move(RED, 3))
+//  b.makeMove(new Move(YELLOW, 2))
+
+//  val state = new State(RED, b, null)//new Move(RED, 1))
   //println(state.toString())
   //println(state.initializeChildren())
-  AI.createGameTree(state, 2)
+//  AI.createGameTree(state, 6)
+  //val ai = new AI(RED,2)
+//  AI.minimax(p1, state)
+//  println(state.value)
 
   /* --------------------------------- Do not change below here. --------------------------------- */
 
