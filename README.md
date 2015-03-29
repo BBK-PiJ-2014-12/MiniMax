@@ -1,6 +1,6 @@
 # README #
 
-This Project was made collaboratively by Zsolt Balvanyos and James Thornton
+This Project was made collaboratively by Zsolt Balvanyos (zbalva01) and James Thornton (jthorn05)
 
 To play the game set the type of user you would like to play against and the difficulty of the AI in gameGUI.scala.  
 
