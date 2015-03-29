@@ -6,29 +6,12 @@ object GameGUI extends App {
          * a player parameter; the AI constructor has a player and depth
          * as parameters, with the a depth used to recurse when searching the
          * game space. */
-  //Solver p1= new AI(Player.RED, 6);
-  //Solver p2= new Human(Player.YELLOW);
-  val p1 = new AI(RED, 2);
-  val p2 = new AI(YELLOW,2);
-  //Solver p1 = new Human(Player.RED);
-  //Solver p2 = new Dummy(Player.YELLOW);
-  
-//  val b = new Board()
-//  b.makeMove(new Move(RED, 3))
-//  b.makeMove(new Move(YELLOW, 3))
-//  b.makeMove(new Move(RED, 3))
-//  b.makeMove(new Move(RED, 3))
-//  b.makeMove(new Move(YELLOW, 3))
-//  //b.makeMove(new Move(RED, 3))
-//  b.makeMove(new Move(YELLOW, 2))
-
-//  val state = new State(RED, b, null)//new Move(RED, 1))
-  //println(state.toString())
-  //println(state.initializeChildren())
-//  AI.createGameTree(state, 6)
-  //val ai = new AI(RED,2)
-//  AI.minimax(p1, state)
-//  println(state.value)
+  // val p1 = new AI(RED, 6);
+  // val p2 = new Human(YELLOW);
+  val p2 = new Human(RED);
+  val p1 = new AI(YELLOW, 6);
+  // val p1 = new Human(RED);
+  // val p2 = new Dummy(YELLOW);
 
   /* --------------------------------- Do not change below here. --------------------------------- */
 

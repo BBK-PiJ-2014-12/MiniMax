@@ -1,13 +1,8 @@
-import java.io.FileNotFoundException
-import java.io.PrintWriter
-import java.io.UnsupportedEncodingException
-import State._
+import java.io.{FileNotFoundException, PrintWriter, UnsupportedEncodingException}
+
+import State.length0
+
 import scala.beans.BeanProperty
-
-object State {
-
-  val length0 = Array[State]()
-}
 
 class State(@BeanProperty var player: Player, @BeanProperty var board: Board, @BeanProperty var lastMove: Move)
   extends Comparable[Any] {
@@ -18,26 +13,25 @@ class State(@BeanProperty var player: Player, @BeanProperty var board: Board, @B
   @BeanProperty
   var value: Int = 0
 
-  def initializeChildren(): Unit = {
+  def initializeChildren() {
     val moves = board.getPossibleMoves(player)
-    for (i<- 0 to moves.length-1) {
+    for (i <- 0 to moves.length - 1) {
       var b1 = new Board(board)
       b1.makeMove(moves(i))
       val state: State = new State(player.opponent, b1, moves(i))
       children :+= state
     }
-    for (i<- children) {
-      //println(i.toString())
-    }
   }
 
   def writeToFile() {
+    var writer: PrintWriter = null
     try {
-      var writer = new PrintWriter("output.txt", "UTF-8")
+      writer = new PrintWriter("output.txt", "UTF-8")
       writer.println(this)
-      java.awt.Toolkit.getDefaultToolkit.beep()
     } catch {
-      case e @ (_: FileNotFoundException | _: UnsupportedEncodingException) => e.printStackTrace()
+      case e@(_: FileNotFoundException | _: UnsupportedEncodingException) => e.printStackTrace()
+    } finally {
+      writer.close();
     }
   }
 
@@ -45,6 +39,8 @@ class State(@BeanProperty var player: Player, @BeanProperty var board: Board, @B
     println("State.toString printing")
     toStringHelper(0, "")
   }
+
+  override def compareTo(o: Any): Int = ???
 
   private def toStringHelper(d: Int, ind: String): String = {
     var str = ind + player + " to play\n"
@@ -59,7 +55,10 @@ class State(@BeanProperty var player: Player, @BeanProperty var board: Board, @B
     }
     str
   }
+}
 
-  override def compareTo(ob: AnyRef): Int = 0
+object State {
+
+  val length0 = Array[State]()
 }
 
